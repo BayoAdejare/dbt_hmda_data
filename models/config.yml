@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: raw_hmda
+    schema: hmda
+    database: hmda_database
+    description: A replica of the Home Mortgage Data Act data from Consumer Financial Protection Bureau.
+    tags: ['sql']
+    tables:
+      - name: hmda
+        columns:
+          - name: _airbyte_hmda_hashid
+            description: Hash column based on the values in the record.
+            tests:
+              - unique
+              - not_null
+
+models:
+  - name: core_hmda
+    config:
+      tags: ['python']
+      materialized: table  
+    # columns: 
+    #   - name: country_name
+    #     tests:
+    #       - accepted_values:
+    #           values: ['United States', 'Canada', 'Mexico']
+    #           config:
+    #             severity: warn
