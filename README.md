@@ -1,7 +1,14 @@
 # Testing dbt Python project
 
-This sample test project is used to compare a dbt SQL model to its more or less equivalent dbt python (dbt-py) model.
-Currently running this test on Snowflake data warehouse, using data from Real Estate Boston Housing Data from Kaggle.
+This sample test project is used to test out dbt python (dbt-py) models.
+Currently running this test on Snowflake data warehouse, uses some Snowpark Python. The data is from Home Mortgage Disclosure Act.
+
+
+## Lineage Graph
+
+
+![Alt text](./imgs/lineage_graph.png "Lineage Graph")
+
 
 ### Using the starter project
 
